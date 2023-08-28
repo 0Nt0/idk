@@ -1,0 +1,9 @@
+﻿@page "/"
+@namespace ServerSide.Pages
+@using ClientSide;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+<component type="typeof(App)" render-mode="ServerPrerendered" />

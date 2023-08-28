@@ -1,0 +1,123 @@
+﻿@page "/NewBook"
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using smth.BookData;
+@inject smth.BookData.IBookData bookData
+@inject smth.DbAccess.IBookDbAccess bookAccess
+
+
+<style>
+  body {
+    background-color: #F0FFF0;
+      }
+  .MainWords{
+    font-size:30px;
+    text-align:center;
+    padding-top: 15px;
+    }
+    .Box{
+        display: flex;
+        justify-content:center;
+        }
+    .TopRow{
+        display:flex;
+        justify-content:right;
+       text-align:left;
+       
+    }
+    .Items{
+         background-color:#fefeee;
+         border-radius:20px;
+         width: 600px;
+         justify-content:right
+         
+    }
+    .BoxInABox{
+        background-color:#FAFAD2;
+           justify-content:left;
+    }
+    .SharedControles{
+         border-radius:20px;
+        width: 70%;
+        display: flex;
+     
+    }
+    .InputBox{
+        margin-bottom:20px;
+        justify-content:center;
+        width:35%;
+    }
+    .ImagesStyle{
+    height:300px;
+    width:200px;
+   
+}
+.ImagesStyle:hover{
+    transform:scale(1.1);
+}
+
+.box{
+    display:flex;
+    align-items:flex-start;
+    padding: 10px;
+}
+.boxbody{
+    flex:1;
+    padding-left:10px
+}
+</style>
+
+<div class="MainWords" >
+    <h1> Books</h1>
+</div>
+
+<div class="Box">
+    <div class="BoxInABox SharedControles">
+        <li>
+         <p>Book Name</p>
+         <input type="text" class="form-control SharedControles InputBox" @bind="name" />
+         <p>Description</p>
+         <input type="text" class="form-control SharedControles InputBox" @bind="description" />
+         <p>Author</p>
+         <input type="text" class="form-control SharedControles InputBox"  @bind="author"/>
+         <p>Publisher</p>
+         <input type="text" class="form-control SharedControles InputBox" @bind="publisher" />
+         <p>Year</p>
+         <input type="text" class="form-control SharedControles InputBox" @bind="year" />
+         <p>Genre</p>
+         <input type="text" class="form-control SharedControles InputBox" @bind="genre"/>
+         <div>
+           <button class="btn btn-dark" @onclick="@(e=>AddNewBook())">Add</button>
+        </div>
+         </li>
+         
+    </div>
+</div>
+
+
+
+@code {
+    private string name;
+    private string description;
+    private string author;
+    private string publisher;
+    public string year;
+    public string genre;
+
+    private async Task AddNewBook()
+    {
+        Book book = new Book
+            {
+                Name = name,
+                Description = description,
+                Author = author,
+                Publisher = publisher,
+                Year = Convert.ToInt32(year),
+                Genra = genre
+            };
+        await bookData.AddNewBook(book);
+        
+    }
+
+
+}

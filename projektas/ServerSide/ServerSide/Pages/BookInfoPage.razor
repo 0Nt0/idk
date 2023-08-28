@@ -1,0 +1,166 @@
+﻿@page "/bookInfo/{BookId}"
+@using smth.BookData;
+@using smth.BookData;
+@inject smth.BookData.IBookData bookData
+@inject smth.DbAccess.IBookDbAccess bookAccess
+
+<style>
+  body {
+    background-color: #F0FFF0;
+      }
+  .MainWords{
+    font-size:30px;
+    text-align:center;
+    padding-top: 15px;
+    }
+    .Box{
+        display: flex;
+        justify-content:center;
+        }
+    .TopRow{
+        display:flex;
+        justify-content:right;
+       text-align:right;
+       
+    }
+    .Items{
+         background-color:#fefeee;
+         border-radius:20px;
+         width: 30%;
+         
+    }
+    .BoxInABox{
+        background-color:#FAFAD2;
+           justify-content:left;
+    }
+    .SharedControles{
+         border-radius:20px;
+        width: 70%;
+        display: flex;
+     
+    }
+    .InputBox{
+        margin-bottom:20px;
+        justify-content:center;
+        width:35%;
+    }
+   
+.box{
+    display:flex;
+    align-items:flex-start;
+    padding: 10px;
+}
+.boxbody{
+    flex:1;
+    padding-left:10px
+}
+</style>
+
+<div class="MainWords" >
+    <h1> Books</h1>
+</div>
+
+<div class="Box">
+    <div class="BoxInABox SharedControles">
+     <ul class="list-unstiled">
+    @if (book != null)
+    {
+        @foreach (var books in book)
+        {
+          <li>
+
+                <div class="boxbody">
+                        <h4 class="mb-0">
+                           Name: @books.Name
+                    </h4>
+                        <div>
+                    <p>Author: @books.Author</p>
+                    </div>
+                    <p>Genre: @books.Genra</p>
+                    <p>Year released: @books.Year</p>
+                    <p>Publisher: @books.Publisher</p>
+                    <p>Description: @books.Description</p>
+                </div>
+             <div>
+                  <button class="btn btn-dark" @onclick="@(e=>ShowBar())"> Edit</button>
+                 @if(show==true)
+                 {
+                     <p> </p>
+                    <p>
+                        Name
+                    </p>
+                <input type="text" class="form-control SharedControles InputBox"  @bind="name" />
+                  <p>
+                        Author
+                  </p>
+                <input type="text" class="form-control SharedControles InputBox"  @bind="author"/>
+                  <p>
+                        Genre
+                  </p>
+                <input type="text" class="form-control SharedControles InputBox"  @bind="genra"/>
+                 <p>
+                        Year
+                 </p>
+                <input type="text" class="form-control SharedControles InputBox"  @bind="year"/>
+                 <p>
+                        Publisher
+                 </p>
+                <input type="text" class="form-control SharedControles InputBox"  @bind="publisher"/>
+                 <p>
+                        Description
+                 </p>
+                 <input type="text" class="form-control SharedControles InputBox"  @bind="description"/>
+                 <button class="btn btn-dark" @onclick="@(e=> SaveChanges(name,author,publisher,genra,year,description))" > Save</button>
+                 }
+             </div>
+            </li>
+            
+        }
+
+    }
+
+</ul>
+    </div>
+</div>
+
+@code{
+    List<Book> book;
+    bool show = false;
+    private string Search;
+    private string year;
+    private string publisher;
+    private string name;
+    private string author;
+    private string genra;
+    private string description;
+
+    [Parameter]
+    public string BookId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        book = (await bookData.GetOneBook( Convert.ToInt32(@BookId) ));
+    }
+    private void ShowBar()
+    {
+        show = true;
+    }
+    private async Task SaveChanges(string name, string author, string publisher, string genra, string year, string description)
+    {
+        Book b = new Book
+            {
+                Id = Convert.ToInt32(@BookId),
+                Name = name,
+                Author = author,
+                Description = description,
+                Genra = genra,
+                Year = Convert.ToInt32(year),
+                Publisher = publisher
+        };
+
+         await bookData.SaveBookEdit(b.Name,b.Description,b.Author,b.Publisher,b.Year,b.Genra,b.Id,b);
+
+
+    }
+
+}

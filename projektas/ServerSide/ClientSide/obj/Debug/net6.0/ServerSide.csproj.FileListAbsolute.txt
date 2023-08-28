@@ -1,0 +1,12 @@
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\bin\Debug\net6.0\ServerSide.deps.json
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\bin\Debug\net6.0\ServerSide.dll
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\bin\Debug\net6.0\ServerSide.pdb
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.csproj.AssemblyReference.cache
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.AssemblyInfoInputs.cache
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.AssemblyInfo.cs
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.csproj.CoreCompileInputs.cache
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.dll
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\refint\ServerSide.dll
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ServerSide.pdb
+C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ClientSide\obj\Debug\net6.0\ref\ServerSide.dll

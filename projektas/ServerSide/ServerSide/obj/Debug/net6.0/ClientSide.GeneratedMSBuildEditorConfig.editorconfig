@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ClientSide
+build_property.RootNamespace = ClientSide
+build_property.ProjectDir = C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ServerSide\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ziliu\Desktop\3M\3M2P\C#\projektas\ServerSide\ServerSide
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/BookInfoPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0luZm9QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/NewBookPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3Qm9va1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Shared/BookList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJvb2tMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kvkkceuv2o
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-pbnv0nk01t
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-lmbe02joj2
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ziliu/Desktop/3M/3M2P/C\#/projektas/ServerSide/ServerSide/Pages/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xvZ2luUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

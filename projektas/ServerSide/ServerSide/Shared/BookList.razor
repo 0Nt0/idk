@@ -1,0 +1,75 @@
+﻿@using smth.BookData;
+@inject smth.BookData.IBookData bookData
+@inject smth.DbAccess.IBookDbAccess bookAccess
+
+<style>
+.ImagesStyle{
+    height:300px;
+    width:200px;
+   
+}
+.ImagesStyle:hover{
+    transform:scale(1.1);
+}
+.media-image-wrapper{
+    width:200px;
+    text-align:center;
+}
+.box{
+    display:flex;
+    align-items:flex-start;
+    padding: 10px;
+}
+.boxbody{
+    flex:1;
+    padding-left:10px
+}
+</style>
+<ul class="list-unstiled">
+    @if (book != null)
+    {
+        @foreach (var books in book)
+        {
+          <li>
+
+                <div class="boxbody">
+                    <a href="#">
+                        <h4 class="mb-0">
+                            @books.Name
+                        </h4>
+                    </a>
+                    <p>@books.Author</p>
+                    <p>@books.Genra</p>
+                    <p> @books.Year</p>
+                    <p>@books.Publisher</p>
+                    <p>@books.Description</p>
+                </div>
+            </li>
+        }
+
+    }
+
+</ul>
+
+@code {
+
+
+    List<Book> book;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        book = (await bookData.GetAllBooks());
+    }
+
+    private async Task FindOneBook(int id)
+    {
+        book.Clear();
+        book = (await bookData.GetOneBook(id));
+    }
+
+
+
+  
+
+}

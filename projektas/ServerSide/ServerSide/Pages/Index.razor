@@ -1,0 +1,149 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using smth.BookData;
+@inject smth.BookData.IBookData bookData
+@inject smth.DbAccess.IBookDbAccess bookAccess
+
+
+
+<style>
+  body {
+    background-color: #F0FFF0;
+      }
+  .MainWords{
+    font-size:30px;
+    text-align:center;
+    padding-top: 15px;
+    }
+    .Box{
+        display: flex;
+        justify-content:center;
+        }
+    .TopRow{
+        display:flex;
+        justify-content:right;
+       text-align:left;
+       
+    }
+    .Items{
+         background-color:#fefeee;
+         border-radius:20px;
+         width: 600px;
+         justify-content:right
+         
+    }
+    .BoxInABox{
+        background-color:#FAFAD2;
+           justify-content:left;
+    }
+    .SharedControles{
+         border-radius:20px;
+        width: 70%;
+        display: flex;
+     
+    }
+    .InputBox{
+        margin-bottom:20px;
+        justify-content:center;
+        width:35%;
+    }
+    .ImagesStyle{
+    height:300px;
+    width:200px;
+   
+}
+.ImagesStyle:hover{
+    transform:scale(1.1);
+}
+
+.box{
+    display:flex;
+    align-items:flex-start;
+    padding: 10px;
+}
+.boxbody{
+    flex:1;
+    padding-left:10px
+}
+</style>
+
+<div class="TopRow">
+    <div class="Items">
+        <a href="/NewBook">
+       <button class="btn btn-dark" >
+           Add New
+       </button>
+       </a>
+    </div>
+</div>
+
+<div class="MainWords" >
+    <h1> Books</h1>
+</div>
+
+  <div class="Box">
+  
+     <input type="text" class="form-control SharedControles InputBox" @bind="Search" />
+     <button class="btn btn-dark" @onclick="@(e=> GetBookByName(Search))"> Find</button>
+
+</div>
+ <div class="Box">
+    <div class="BoxInABox SharedControles">
+     <ul class="list-unstiled">
+    @if (book != null)
+    {
+        @foreach (var books in book)
+        {
+          <li>
+
+                <div class="boxbody">
+                    <a href="/bookInfo/@books.Id">
+                        <h4 class="mb-0">
+                           Name: @books.Name
+                        </h4>
+                    </a>
+                    <p>Author: @books.Author</p>
+                    <p>Book genre: @books.Genra</p>
+                    <p>Year released: @books.Year</p>
+                    <p>Publisher: @books.Publisher</p>
+                    <p>Description: @books.Description</p>
+                </div>
+                       <button class="btn btn-dark" @onclick="@(e=>DeleteSelectedBook(books.Id))">
+                                 Delete
+                       </button>
+            </li>
+        }
+
+    }
+
+</ul>
+    </div>
+</div>
+
+@code {
+    List<Book> book;
+    private string Search;
+    private string SearchType;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        book = (await bookData.GetAllBooks());
+    }
+    private async Task GetBookByName(string name)
+    {
+        book.Clear();
+        book = (await bookData.GetByName(name));
+    }
+    private async Task DeleteSelectedBook(int id)
+    {
+        book.Clear();
+        await bookData.DeleteBook(id);
+        book = (await bookData.GetAllBooks());
+    }
+
+   
+}
+ 
